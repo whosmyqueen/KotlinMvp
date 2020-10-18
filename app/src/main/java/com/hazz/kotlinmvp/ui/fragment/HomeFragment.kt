@@ -18,7 +18,7 @@ import com.hazz.kotlinmvp.ui.activity.SearchActivity
 import com.hazz.kotlinmvp.ui.adapter.HomeAdapter
 import com.hazz.kotlinmvp.utils.StatusBarUtil
 import com.orhanobut.logger.Logger
-import com.scwang.smartrefresh.header.MaterialHeader
+import com.scwang.smart.refresh.header.MaterialHeader
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.text.SimpleDateFormat
 import java.util.*

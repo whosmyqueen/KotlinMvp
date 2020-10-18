@@ -11,7 +11,7 @@ import kotlin.reflect.KProperty
  * Created by xuhao on 2017/12/11.
  * desc:kotlin委托属性+SharedPreference实例
  */
-class Preference<T>(val name:String, private val default:T) {
+class Preference<T>(val name: String, private val default: T) {
 
 
     companion object {
@@ -20,22 +20,21 @@ class Preference<T>(val name:String, private val default:T) {
         private val prefs: SharedPreferences by lazy {
             MyApplication.context.getSharedPreferences(file_name, Context.MODE_PRIVATE)
         }
+
         /**
          * 删除全部数据
          */
-        fun clearPreference(){
+        fun clearPreference() {
             prefs.edit().clear().apply()
         }
 
         /**
          * 根据key删除存储数据
          */
-        fun clearPreference(key : String){
+        fun clearPreference(key: String) {
             prefs.edit().remove(key).apply()
         }
     }
-
-
 
 
     operator fun getValue(thisRef: Any?, property: KProperty<*>): T {
@@ -54,7 +53,7 @@ class Preference<T>(val name:String, private val default:T) {
             is Int -> putInt(name, value)
             is Boolean -> putBoolean(name, value)
             is Float -> putFloat(name, value)
-            else -> putString(name,serialize(value))
+            else -> putString(name, serialize(value))
         }.apply()
     }
 
@@ -66,11 +65,10 @@ class Preference<T>(val name:String, private val default:T) {
             is Int -> getInt(name, default)
             is Boolean -> getBoolean(name, default)
             is Float -> getFloat(name, default)
-            else ->  deSerialization(getString(name,serialize(default)))
-        }
+            else -> getString(name, serialize(default))?.let { deSerialization(it) }
+        }!!
         return res as T
     }
-
 
 
     /**
@@ -83,7 +81,7 @@ class Preference<T>(val name:String, private val default:T) {
      * @throws IOException
      */
     @Throws(IOException::class)
-    private fun<A> serialize(obj: A): String {
+    private fun <A> serialize(obj: A): String {
         val byteArrayOutputStream = ByteArrayOutputStream()
         val objectOutputStream = ObjectOutputStream(
                 byteArrayOutputStream)
@@ -108,7 +106,7 @@ class Preference<T>(val name:String, private val default:T) {
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IOException::class, ClassNotFoundException::class)
-    private fun<A> deSerialization(str: String): A {
+    private fun <A> deSerialization(str: String): A {
         val redStr = java.net.URLDecoder.decode(str, "UTF-8")
         val byteArrayInputStream = ByteArrayInputStream(
                 redStr.toByteArray(charset("ISO-8859-1")))

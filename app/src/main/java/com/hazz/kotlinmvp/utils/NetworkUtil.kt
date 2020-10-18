@@ -14,7 +14,7 @@ import java.net.URL
 /**
  * Created by xuhao on 2017/11/13.
  */
-class NetworkUtil{
+class NetworkUtil {
 
     companion object {
 
@@ -23,6 +23,7 @@ class NetworkUtil{
         var NET_NOT_PREPARE = 3 // Net no ready
         var NET_ERROR = 4 //net error
         private val TIMEOUT = 3000 // TIMEOUT
+
         /**
          * check NetworkAvailable
          *
@@ -141,13 +142,13 @@ class NetworkUtil{
                     .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val mgrTel = context
                     .getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+            mgrConn.activeNetworkInfo
             return mgrConn.activeNetworkInfo != null && mgrConn
-                    .activeNetworkInfo.state == NetworkInfo.State.CONNECTED || mgrTel
+                    .activeNetworkInfo!!.state == NetworkInfo.State.CONNECTED || mgrTel
                     .networkType == TelephonyManager.NETWORK_TYPE_UMTS
         }
 
     }
-
 
 
 }

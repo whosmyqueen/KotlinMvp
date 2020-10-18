@@ -7,17 +7,17 @@
     android:background="@color/backgroundColor">
 
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/mRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
         app:srlAccentColor="@android:color/white"
         app:srlEnableHeaderTranslationContent="false"
-        app:srlEnableLoadmore="false"
+        app:srlEnableLoadMore="false"
         app:srlPrimaryColor="@color/colorPrimary">
 
-        <com.scwang.smartrefresh.header.MaterialHeader
+        <com.scwang.smart.refresh.header.MaterialHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -82,7 +82,7 @@
         </FrameLayout>
 
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 
 </RelativeLayout>

@@ -5,13 +5,14 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import com.blankj.utilcode.util.ConvertUtils
 import com.hazz.kotlinmvp.R
 import com.hazz.kotlinmvp.base.BaseActivity
+import com.hazz.kotlinmvp.listener.SimpleMultiPurposeListener
 import com.hazz.kotlinmvp.utils.CleanLeakUtils
 import com.hazz.kotlinmvp.utils.StatusBarUtil
-import com.scwang.smartrefresh.layout.api.RefreshHeader
-import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener
-import com.scwang.smartrefresh.layout.util.DensityUtil
+import com.scwang.smart.refresh.layout.api.RefreshHeader
+import com.scwang.smart.refresh.layout.listener.OnMultiListener
 import kotlinx.android.synthetic.main.activity_profile_homepage.*
 import java.util.*
 
@@ -38,14 +39,18 @@ class ProfileHomePageActivity : BaseActivity() {
         StatusBarUtil.darkMode(this)
         StatusBarUtil.setPaddingSmart(this, toolbar)
 
-        refreshLayout.setOnMultiPurposeListener(object : SimpleMultiPurposeListener() {
-            override fun onHeaderPulling(header: RefreshHeader?, percent: Float, offset: Int, bottomHeight: Int, extendHeight: Int) {
+//        refreshLayout.setOnMultiPurposeListener(object : SimpleMultiPurposeListener() {
+
+//        })
+        // todo 需要适配刷新过程监听
+        refreshLayout.setOnMultiListener(object : SimpleMultiPurposeListener() {
+            fun onHeaderPulling(header: RefreshHeader?, percent: Float, offset: Int, bottomHeight: Int, extendHeight: Int) {
                 mOffset = offset / 2
                 parallax.translationY = (mOffset - mScrollY).toFloat()
                 toolbar.alpha = 1 - Math.min(percent, 1f)
             }
 
-            override fun onHeaderReleasing(header: RefreshHeader?, percent: Float, offset: Int, bottomHeight: Int, extendHeight: Int) {
+            fun onHeaderReleasing(header: RefreshHeader?, percent: Float, offset: Int, bottomHeight: Int, extendHeight: Int) {
                 mOffset = offset / 2
                 parallax.translationY = (mOffset - mScrollY).toFloat()
                 toolbar.alpha = 1 - Math.min(percent, 1f)
@@ -53,10 +58,10 @@ class ProfileHomePageActivity : BaseActivity() {
         })
         scrollView.setOnScrollChangeListener(object : NestedScrollView.OnScrollChangeListener {
             private var lastScrollY = 0
-            private val h = DensityUtil.dp2px(170f)
+            private val h = ConvertUtils.dp2px(170f)
             private val color = ContextCompat.getColor(applicationContext, R.color.colorPrimary) and 0x00ffffff
             override fun onScrollChange(v: NestedScrollView, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int) {
-                var tScrollY= scrollY
+                var tScrollY = scrollY
                 if (lastScrollY < h) {
                     tScrollY = Math.min(h, tScrollY)
                     mScrollY = if (tScrollY > h) h else tScrollY
@@ -69,11 +74,11 @@ class ProfileHomePageActivity : BaseActivity() {
         })
         buttonBarLayout.alpha = 0f
         toolbar.setBackgroundColor(0)
-         //返回
+        //返回
         toolbar.setNavigationOnClickListener { finish() }
 
 
-        refreshLayout.setOnRefreshListener {  mWebView.loadUrl("https://xuhaoblog.com/KotlinMvp") }
+        refreshLayout.setOnRefreshListener { mWebView.loadUrl("https://xuhaoblog.com/KotlinMvp") }
         refreshLayout.autoRefresh()
 
         mWebView.settings.javaScriptEnabled = true
@@ -86,7 +91,7 @@ class ProfileHomePageActivity : BaseActivity() {
             override fun onPageFinished(view: WebView, url: String) {
                 super.onPageFinished(view, url)
                 refreshLayout.finishRefresh()
-                view.loadUrl(String.format(Locale.CHINA, "javascript:document.body.style.paddingTop='%fpx'; void 0", DensityUtil.px2dp(mWebView.paddingTop.toFloat())))
+                view.loadUrl(String.format(Locale.CHINA, "javascript:document.body.style.paddingTop='%fpx'; void 0", ConvertUtils.px2dp(mWebView.paddingTop.toFloat())))
             }
         }
 

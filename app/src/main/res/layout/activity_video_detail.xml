@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mRefreshLayout"
-    app:srlAccentColor="@android:color/white"
-    app:srlEnableHeaderTranslationContent="false"
-    app:srlEnableLoadmore="false"
-    app:srlPrimaryColor="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    app:srlAccentColor="@android:color/white"
+    app:srlEnableHeaderTranslationContent="false"
+    app:srlEnableLoadMore="false"
+    app:srlPrimaryColor="@color/colorPrimary">
 
-    <com.scwang.smartrefresh.header.MaterialHeader
+    <com.scwang.smart.refresh.header.MaterialHeader
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -44,4 +44,4 @@
             android:layout_below="@+id/mVideoView" />
 
     </RelativeLayout>
-</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>
