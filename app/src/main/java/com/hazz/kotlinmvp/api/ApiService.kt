@@ -4,7 +4,7 @@ import com.hazz.kotlinmvp.mvp.model.bean.AuthorInfoBean
 import com.hazz.kotlinmvp.mvp.model.bean.CategoryBean
 import com.hazz.kotlinmvp.mvp.model.bean.HomeBean
 import com.hazz.kotlinmvp.mvp.model.bean.TabInfoBean
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 import retrofit2.http.Url

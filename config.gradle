@@ -11,10 +11,10 @@ ext{
 
     dependVersion = [
             androidSupportSdkVersion: "27.1.1",
-            retrofitSdkVersion      : "2.3.0",
+            retrofitSdkVersion      : "2.9.0",
             glideSdkVersion         : "4.11.0",
-            rxJava                  : "2.1.5",
-            rxAndroid               : "2.0.1"
+            rxJava                  : "3.0.7",
+            rxAndroid               : "3.0.0"
     ]
 
     supportDeps = [
@@ -31,13 +31,13 @@ ext{
             //------ retrofit和RxJava ---------
             retrofit                : "com.squareup.retrofit2:retrofit:$dependVersion.retrofitSdkVersion",
             retrofitConverterGson   : "com.squareup.retrofit2:converter-gson:$dependVersion.retrofitSdkVersion",
-            retrofitAdapterRxjava2  : "com.squareup.retrofit2:adapter-rxjava2:$dependVersion.retrofitSdkVersion",
+            retrofitAdapterRxjava2  : "com.squareup.retrofit2:adapter-rxjava3:$dependVersion.retrofitSdkVersion",
             okhttp3LoggerInterceptor: 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     ]
 
     rxJava = [
-            rxJava                : "io.reactivex.rxjava2:rxjava:$dependVersion.rxJava",
-            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid"
+            rxJava                : "io.reactivex.rxjava3:rxjava:$dependVersion.rxJava",
+            rxAndroid             : "io.reactivex.rxjava3:rxandroid:$dependVersion.rxAndroid"
     ]
 
 

@@ -1,13 +1,12 @@
 package com.hazz.kotlinmvp.rx.scheduler
 
-import io.reactivex.*
+import io.reactivex.rxjava3.core.*
 import org.reactivestreams.Publisher
 
 /**
  * Created by xuhao on 2017/11/17.
  * desc:RxJava2.x 5中基础相应类型
  */
-
 
 
 abstract class BaseScheduler<T> protected constructor(private val subscribeOnScheduler: Scheduler,

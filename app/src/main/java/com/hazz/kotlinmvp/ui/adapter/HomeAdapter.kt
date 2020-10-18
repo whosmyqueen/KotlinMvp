@@ -18,7 +18,7 @@ import com.hazz.kotlinmvp.mvp.model.bean.HomeBean
 import com.hazz.kotlinmvp.ui.activity.VideoDetailActivity
 import com.hazz.kotlinmvp.view.recyclerview.ViewHolder
 import com.hazz.kotlinmvp.view.recyclerview.adapter.CommonAdapter
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 /**
  * Created by xuhao on 2017/11/23.
