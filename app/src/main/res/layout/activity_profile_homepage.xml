@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             app:srlAccentColor="@android:color/white" />
 
-        <android.support.v4.widget.NestedScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <android.support.design.widget.CollapsingToolbarLayout
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
                         android:id="@+id/collapse"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -167,7 +167,7 @@
                                 android:layout_alignParentBottom="true" />
                         </RelativeLayout>
 
-                    </android.support.design.widget.CollapsingToolbarLayout>
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -221,11 +221,11 @@
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -233,7 +233,7 @@
         app:layout_collapseMode="pin"
         app:navigationIcon="?attr/homeAsUpIndicator">
 
-        <android.support.v7.widget.ButtonBarLayout
+        <androidx.appcompat.widget.ButtonBarLayout
             android:id="@+id/buttonBarLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -257,8 +257,8 @@
                 android:text="@string/nickname"
                 android:textColor="@color/color_black"
                 android:textSize="16sp" />
-        </android.support.v7.widget.ButtonBarLayout>
-    </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.ButtonBarLayout>
+    </androidx.appcompat.widget.Toolbar>
 
 
 </FrameLayout>

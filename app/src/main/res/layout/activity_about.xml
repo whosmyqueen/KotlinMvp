@@ -133,7 +133,7 @@
 
 
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -150,6 +150,6 @@
                     android:textColor="@color/color_item_title"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-        </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
 </RelativeLayout>

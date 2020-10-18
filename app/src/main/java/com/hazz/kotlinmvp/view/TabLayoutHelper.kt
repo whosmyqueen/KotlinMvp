@@ -2,7 +2,7 @@ package com.hazz.kotlinmvp.view
 
 import android.annotation.SuppressLint
 import android.os.Build
-import android.support.design.widget.TabLayout
+import com.google.android.material.tabs.TabLayout
 import android.widget.LinearLayout
 import com.hazz.kotlinmvp.utils.DisplayManager
 import java.lang.reflect.Field

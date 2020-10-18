@@ -1,7 +1,7 @@
 package com.hazz.kotlinmvp.view.recyclerview
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.SparseArray
 import android.view.View
 import android.view.ViewGroup

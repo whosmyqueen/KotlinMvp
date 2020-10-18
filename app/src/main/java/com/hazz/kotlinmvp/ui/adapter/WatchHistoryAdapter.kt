@@ -3,10 +3,10 @@ package com.hazz.kotlinmvp.ui.adapter
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.ActivityOptionsCompat
-import android.support.v4.content.ContextCompat
-import android.support.v4.util.Pair
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.ContextCompat
+import androidx.core.util.Pair
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

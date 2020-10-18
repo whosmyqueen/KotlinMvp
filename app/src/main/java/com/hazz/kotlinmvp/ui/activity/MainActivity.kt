@@ -2,7 +2,7 @@ package com.hazz.kotlinmvp.ui.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.FragmentTransaction
+import androidx.fragment.app.FragmentTransaction
 import android.view.KeyEvent
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener

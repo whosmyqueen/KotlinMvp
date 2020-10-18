@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.res.Configuration
 import android.os.Build
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.transition.Transition
 import android.view.View
 import android.widget.ImageView
@@ -274,7 +274,7 @@ class VideoDetailActivity : BaseActivity(), VideoDetailContract.View {
     }
 
 
-    override fun onConfigurationChanged(newConfig: Configuration?) {
+    override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         if (isPlay && !isPause) {
             mVideoView.onConfigurationChanged(this, newConfig, orientationUtils)

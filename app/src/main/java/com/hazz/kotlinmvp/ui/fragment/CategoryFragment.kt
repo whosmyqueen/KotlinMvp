@@ -2,8 +2,8 @@ package com.hazz.kotlinmvp.ui.fragment
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.hazz.kotlinmvp.R
 import com.hazz.kotlinmvp.base.BaseFragment
@@ -58,9 +58,9 @@ class CategoryFragment : BaseFragment(), CategoryContract.View {
         mLayoutStatusView = multipleStatusView
 
         mRecyclerView.adapter = mAdapter
-        mRecyclerView.layoutManager =GridLayoutManager(activity,2)
+        mRecyclerView.layoutManager = GridLayoutManager(activity, 2)
         mRecyclerView.addItemDecoration(object : RecyclerView.ItemDecoration() {
-            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State?) {
+            override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
                 val position = parent.getChildPosition(view)
                 val offset = DisplayManager.dip2px(2f)!!
 

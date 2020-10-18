@@ -11,7 +11,7 @@
     app:loadingView="@layout/layout_loading_view"
     app:noNetworkView="@layout/layout_network_view">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,5 +19,5 @@
         android:paddingBottom="@dimen/padding_tab_layout_bottom"
         tools:listitem="@layout/item_category_detail">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 </com.classic.common.MultipleStatusView>

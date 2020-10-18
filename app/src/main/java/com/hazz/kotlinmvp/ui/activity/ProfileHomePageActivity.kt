@@ -1,8 +1,8 @@
 package com.hazz.kotlinmvp.ui.activity
 
 import android.annotation.SuppressLint
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.NestedScrollView
+import androidx.core.content.ContextCompat
+import androidx.core.widget.NestedScrollView
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.hazz.kotlinmvp.R

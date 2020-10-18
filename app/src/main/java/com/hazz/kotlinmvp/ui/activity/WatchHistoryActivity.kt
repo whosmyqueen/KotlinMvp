@@ -1,6 +1,6 @@
 package com.hazz.kotlinmvp.ui.activity
 
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.hazz.kotlinmvp.Constants
 import com.hazz.kotlinmvp.MyApplication
 import com.hazz.kotlinmvp.R
